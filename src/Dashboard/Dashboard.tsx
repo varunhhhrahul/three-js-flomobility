@@ -17,6 +17,8 @@ interface DashboardProps {}
 
 export const Dashboard: React.FC<DashboardProps> = (props) => {
   const group = createRef<Group>();
+  // @ts-ignore
+  const controls = createRef<OrbitControls>();
   const data = useGLTF("/scene.gltf");
 
   return (
@@ -73,7 +75,7 @@ export const Dashboard: React.FC<DashboardProps> = (props) => {
               />
             </group>
 
-            <OrbitControls autoRotate />
+            <OrbitControls makeDefault autoRotate ref={controls} />
           </Center>
         </Suspense>
       </Canvas>
