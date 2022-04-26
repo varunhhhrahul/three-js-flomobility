@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { AlertComponentPropsWithStyle } from "react-alert";
+
 import { Alert } from "antd";
+import { AlertComponentPropsWithStyle } from "react-alert";
 
 interface IMessageProps {
   message: React.ReactNode;
@@ -28,9 +29,9 @@ const Message: React.FC<IMessageProps> = ({
   );
 };
 
-interface IAlertTemplateProps extends AlertComponentPropsWithStyle {}
+// interface IAlertTemplateProps extends AlertComponentPropsWithStyle {}
 
-export const AlertTemplate: React.FC<IAlertTemplateProps> = ({
+export const AlertTemplate: React.FC<AlertComponentPropsWithStyle> = ({
   options,
   message,
   close,

@@ -1,8 +1,9 @@
 import React, { useEffect } from "react";
 import { shallowEqual, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { RootState } from "../../../app/rootReducer";
-import { DASHBOARD } from "../../../constants/routes";
+import { RootState } from "../../app/rootReducer";
+import { DASHBOARD } from "../../constants/routes";
+
 import EnhancedLoginForm from "./EnhancedLoginForm";
 
 interface LoginProps {}

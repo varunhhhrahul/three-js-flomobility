@@ -1,6 +1,5 @@
 import { configureStore, Action } from "@reduxjs/toolkit";
 import { ThunkAction } from "redux-thunk";
-import setAuthToken from "../utils/setAuthToken";
 
 import rootReducer, { RootState } from "./rootReducer";
 
@@ -19,17 +18,17 @@ export type AppThunk = ThunkAction<void, RootState, null, Action<string>>;
 
 // initialize current state from redux store for subscription comparison
 // preventing undefined error
-let currentState = store.getState();
+// let currentState = store.getState();
 
-store.subscribe(async () => {
-  // keep track of the previous and current state to compare changes
-  const previousState = currentState;
-  currentState = store.getState();
-  // if the token changes set the value in localStorage and axios headers
-  if (previousState.auth.token !== currentState.auth.token) {
-    const token = currentState.auth.token;
-    await setAuthToken(token);
-  }
-});
+// store.subscribe(async () => {
+//   // keep track of the previous and current state to compare changes
+//   const previousState = currentState;
+//   currentState = store.getState();
+//   // if the token changes set the value in localStorage and axios headers
+//   if (previousState.auth.user.email !== currentState.auth.user.email) {
+//     const token = currentState.auth.;
+//     await setAuthToken(token);
+//   }
+// });
 
 export default store;

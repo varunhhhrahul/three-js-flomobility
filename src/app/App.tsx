@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 import { AnyAction } from "redux";
 import { Provider as AlertProvider } from "react-alert";
+import { OrbitControls, useGLTF } from "@react-three/drei";
 import store from "./store";
 
 import { AlertTemplate } from "../components/Alert/AlertTemplate";
@@ -26,6 +27,7 @@ function App() {
         store.dispatch(loadUser() as unknown as AnyAction);
       }
     })();
+    useGLTF.preload("/scene.gltf");
   }, []);
   return (
     <Provider store={store}>

@@ -81,8 +81,8 @@ export const login =
         await localStorage.setItem(
           "user",
           JSON.stringify({
-            email: email,
-            password: password,
+            email,
+            password,
           })
         );
         dispatch(loadUser());
